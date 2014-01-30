@@ -1,0 +1,2 @@
+<!-- This should be the class name of the class  -->
+<pluginclass>${artifactId}Plugin</pluginclass>
