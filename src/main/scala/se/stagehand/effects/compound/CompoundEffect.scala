@@ -20,10 +20,12 @@ class CompoundEffect(id:Int) extends Effect(id) with Targets {
     if (conflicts(e)) {
         throw new IllegalArgumentException("Effect " + e + " has conflicting run arguments with an existing effect." )
       } else {
+        sourceArgs.foreach(x => e.addArg(x._1,x._2))
         _effects = e :: _effects
       }
   }
   def removeEffect(e:Effect) {
+    sourceArgs.foreach(x => e.removeArg(x._1))
     _effects = _effects
   }
   
@@ -36,8 +38,8 @@ class CompoundEffect(id:Int) extends Effect(id) with Targets {
   def requirements = {
     effectsWithTargets.map(_.requirements).flatten.distinct.toSet
   }
-  def runArgs = {
-    effectsWithTargets.map(_.runArgs).flatten.toMap
+  override def runArgs = {
+    effectsWithTargets.map(_.runArgs).flatten.toMap ++ super.runArgs
   }
   
   /**
