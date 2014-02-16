@@ -40,6 +40,20 @@ class CompoundEditorItem(e: CompoundEffect) extends BoxPanel(Orientation.Horizon
   
   contents += effectList
   contents += new FlowPanel { contents += addButton } 
+  
+  effect.effects.foreach(e => {
+    val gui = GUIManager.componentByID[EditorEffectItem[_]](e.id)
+    gui match {
+      case Some(g) => {
+        effectList.contents += g
+      }
+      case None => {
+        effectList.contents += GUIManager.editorItem(e)
+      }
+    }
+  })
+  refresh
+  
 }
 
 class CompoundPlayerItem(e: CompoundEffect) extends TargetedPlayerEffectItem[CompoundEffect](e) {
