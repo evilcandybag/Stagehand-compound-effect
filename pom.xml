@@ -123,12 +123,7 @@
                   <overWrite>true</overWrite>
                   <!-- THIS IS A VERY UGLY WAY TO DO IT; MIGHT WANNA CHANGE TO COOLER STUFF IN TEH FUTUR -->
                   <outputDirectory>${project.build.directory}/../../../Stagehand-core/plugins/</outputDirectory>
-<<<<<<< HEAD
-
                   <destFileName>${project.artifactId}.jar</destFileName>
-=======
-                  <destFileName>${project.artifactId}-${project.version}.jar</destFileName>
->>>>>>> c0f79272ded902936268bf0e886a38308153b05b
                 </artifactItem>
               </artifactItems>
               <outputDirectory>${project.build.directory}/wars</outputDirectory>
