@@ -47,18 +47,13 @@
 
     <!-- Test -->
     <dependency>
-    	<groupId>se.stagehand</groupId>
-    	<artifactId>Stagehand-lib</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
     	<groupId>org.scala-lang</groupId>
     	<artifactId>scala-swing</artifactId>
     	<version>${scala.version}</version>
     </dependency>
     <dependency>
     	<groupId>se.stagehand</groupId>
-    	<artifactId>Stagehand-swing</artifactId>
+    	<artifactId>Stagehand-core</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
@@ -127,8 +122,9 @@
                   <type>jar</type>
                   <overWrite>true</overWrite>
                   <!-- THIS IS A VERY UGLY WAY TO DO IT; MIGHT WANNA CHANGE TO COOLER STUFF IN TEH FUTUR -->
-                  <outputDirectory>${project.build.directory}/../../../Stagehand-core/Stagehand-swing/plugins/</outputDirectory>
-                  <destFileName>${project.artifactId}-${project.version}.jar</destFileName>
+                  <outputDirectory>${project.build.directory}/../../../Stagehand-core/plugins/</outputDirectory>
+
+                  <destFileName>${project.artifactId}.jar</destFileName>
                 </artifactItem>
               </artifactItems>
               <outputDirectory>${project.build.directory}/wars</outputDirectory>
